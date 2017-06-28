@@ -1,0 +1,169 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="dropdown.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+<link rel="import" href="ShowData.html">
+<!-- <link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/> -->
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/semantic.css">
+<script src="../Semantic/examples/assets/library/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/reset.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/site.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/grid.css">
+
+<!--- Component CSS -->
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/icon.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/input.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/button.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/divider.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/label.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/dropdown.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/transition.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/popup.css">
+
+
+<!--- Component JS -->
+<script src="../Semantic/examples/assets/library/jquery.min.js"></script>
+<script type="text/javascript" src="../Semantic/dist/components/popup.js"></script>
+<script type="text/javascript" src="../Semantic/dist/components/dropdown.js"></script>
+<script type="text/javascript" src="../Semantic/dist/components/transition.js"></script>
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      .inline-left{
+        display:inline-block;
+        margin-left: 10px;
+      }
+
+      p.inline{
+        font-size: 20px;
+      }
+
+      .inline{
+        display:inline-block;
+      }
+
+      #profile {display:inline-block;}
+      #role {display:inline-block;}
+    </style>
+
+    <style type="text/css">
+      body > .ui.container {
+        margin-top: 3em;
+      }
+      iframe {
+        border: none;
+        width: calc(100% + 2em);
+        margin: 0em -1em;
+        height: 300px;
+      }
+      iframe html {
+        overflow: hidden;
+      }
+      iframe body {
+        padding: 0em;
+      }
+
+      .ui.container > h1 {
+        font-size: 3em;
+        text-align: center;
+        font-weight: normal;
+      }
+      .ui.container > h2.dividing.header {
+        font-size: 2em;
+        font-weight: normal;
+        margin: 4em 0em 3em;
+      }
+
+
+      .ui.table {
+        table-layout: fixed;
+      }
+    </style>
+
+  <div class="card">
+    <div>
+      <h3>
+ <h3 class="inline">你的身份</h3>
+
+
+      <select style="border-color:black" class="inline-left" >
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">普通村民</option>
+        <option value="2">狼人</option>
+        <option value="3">女巫</option>
+        <option value="4">猎人</option>
+        <option value="3">预言家</option>
+        <option value="3">白痴</option>
+      </select>
+    </div>
+
+      </div>
+
+          <div class="card">
+            <div>
+
+        <h3 class="inline">胜利了吗</h3>
+
+
+              <select style="border-color:black" class="inline-left" >
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">大获全胜</option>
+                <option value="2">遗憾败北</option>
+
+              </select>
+
+              </div>
+                  </div>
+
+<body>
+
+          <show-data></show-data>
+
+
+
+
+
+
+
+</body>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view2',
+      ready: function() {
+        $('.ui.menu .ui.dropdown').dropdown({
+          on: 'hover'
+        });
+        $('.ui.menu a.item')
+          .on('click', function() {
+            $(this)
+              .addClass('active')
+              .siblings()
+              .removeClass('active');
+          });
+      }
+    });
+  </script>
+
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+  <!-- <script type="text/javascript" src="../bower_components/materialize/dist/js/materialize.min.js"></script> -->
+</dom-module>

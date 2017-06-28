@@ -1,0 +1,51 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link type="text/css" rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+
+<dom-module id="my-view1">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+    <div class="card">
+      <div class="col s12 m8 offset-m2 l6 offset-l3">
+         <div class="card-panel grey lighten-5 z-depth-1">
+           <div class="row valign-wrapper">
+             <div class="col s2">
+               <img src="../images/pangdadi.JPG" alt="" class="circle responsive-img" style="transform: rotate(90deg);"> <!-- notice the "circle" class -->
+             </div>
+             <div class="col s10">
+               <span class="black-text">
+                 欢迎回来！你现在排名第五名哦！再接再厉！
+               </span>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+      <!-- <iron-image src="../images/favicon.ico"></iron-image> -->
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view1',
+    });
+  </script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../bower_components/materialize/dist/js/materialize.min.js"></script>
+</dom-module>

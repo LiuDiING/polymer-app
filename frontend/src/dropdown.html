@@ -1,0 +1,48 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/menu.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/reset.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/site.css">
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/grid.css">
+
+<link rel="stylesheet" type="text/css" href="../Semantic/dist/components/popup.css">
+<script src="../Semantic/example/assets/library/jquery.min.js"></script>
+<script src="../Semantic/example/assets/show-examples.js"></script>
+<script type="text/javascript" src="../Semantic/dist/components/popup.js"></script>
+
+<!--- Component JS -->
+<script type="text/javascript" src="../Semantic/dist/components/transition.js"></script>
+<script type="text/javascript" src="../Semantic/dist/components/dropdown.js"></script>
+
+<!-- shared styles for all views -->
+<dom-module id="dropdown">
+  <template>
+    <div class="ui inverted menu">
+      <div class="header item">Brand</div>
+      <div class="active item">Link</div>
+      <a class="item">Link</a>
+      <div class="ui dropdown item">
+        Dropdown
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">Action</div>
+          <div class="item">Another Action</div>
+          <div class="item">Something else here</div>
+          <div class="divider"></div>
+          <div class="item">Separated Link</div>
+          <div class="divider"></div>
+          <div class="item">One more separated link</div>
+        </div>
+      </div>
+    </div>
+  </template>
+</dom-module>

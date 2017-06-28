@@ -1,0 +1,62 @@
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href = "../bower_components/polymer/polymer.html">
+<link rel="import" href = "../bower_components/byutv-jsonp/byutv-jsonp.html">
+
+<dom-module id="show-data">
+  <template>
+
+
+
+    User Name is
+    <template is="dom-repeat" items="{{lastResponse}}">
+      <span>[[item.id]]</span>
+
+    </template>
+
+    <template is="dom-if" if="{{lastError}}">
+      <div>
+        <h1>There was an error retrieving the data.</h1>
+      </div>
+    </template>
+
+    <iron-ajax
+    auto
+    id="test"
+    url="http://127.0.0.1:8080/demo/all"
+    handle-as="json"
+    on-response="handleResponse"
+    last-response="{{lastResponse}}"
+    last-error="{{lastError}}">
+  </iron-ajax>
+
+
+
+</template>
+
+
+<script>
+Polymer({
+  is:'show-data',
+  properties:{
+    user:{
+      type:Array
+    },
+    hehe:{
+      type:Array
+    }
+  },
+
+  ready: function(){
+    this.$.test.generateRequest();
+    console.log("request is sent");
+  },
+  handleResponse: function(data) {
+    this.lastResponse = data.detail.response;
+  }
+
+
+});
+
+</script>
+
+</dom-module>
